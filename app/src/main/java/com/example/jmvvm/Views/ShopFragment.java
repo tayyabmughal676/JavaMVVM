@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,6 +52,23 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 //      Shop List Adapter
         shopListAdapter = new ShopListAdapter();
         fragmentShopBinding.shopRecyclerView.setAdapter(shopListAdapter);
+//        Divided Line View
+        fragmentShopBinding
+                .shopRecyclerView
+                .addItemDecoration(
+                        new DividerItemDecoration(
+                                requireContext(),
+                                DividerItemDecoration.VERTICAL
+                        )
+                );
+        fragmentShopBinding
+                .shopRecyclerView
+                .addItemDecoration(
+                        new DividerItemDecoration(
+                                requireContext(),
+                                DividerItemDecoration.HORIZONTAL
+                        )
+                );
 //        Shop View Model
         shopViewModel = new ViewModelProvider(requireActivity()).get(ShopViewModel.class);
         shopViewModel.getProduct().observe(getViewLifecycleOwner(), new Observer<List<Product>>() {
