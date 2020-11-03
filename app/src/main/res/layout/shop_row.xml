@@ -26,8 +26,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:scaleType="fitCenter"
             android:productImage="@{product.imageUrl}"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/iphone11" />
 
         <TextView
