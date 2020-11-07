@@ -63,6 +63,7 @@
             android:layout_gravity="center"
             android:enabled="@{product.available}"
             android:text="Add to cart"
+            android:onClick="@{()-> shopInterface.addItem(product)}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Caption" />
     </LinearLayout>
 </layout>

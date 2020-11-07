@@ -34,7 +34,7 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
     private ShopListAdapter shopListAdapter;
     //    Show View Model.
     private ShopViewModel shopViewModel;
-//     Navi controller
+    //     Navi controller
     private NavController navController;
 
     public ShopFragment() {
@@ -93,7 +93,8 @@ public class ShopFragment extends Fragment implements ShopListAdapter.ShopInterf
 
     @Override
     public void addItem(Product product) {
-
+        boolean isAdded = shopViewModel.addItemToCart(product);
+        Log.d(TAG, "addItem: " + product.getName() + isAdded);
     }
 
     @Override
